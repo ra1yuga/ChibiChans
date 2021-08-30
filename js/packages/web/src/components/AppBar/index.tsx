@@ -27,7 +27,7 @@ const UserActions = () => {
           {/* <Link to={`#`}>
             <Button className="app-btn">Bids</Button>
           </Link> */}
-          {canCreate ? (
+          {/* {canCreate ? (
             <Link to={`/art/create`}>
               <Button className="app-btn">Create</Button>
             </Link>
@@ -36,7 +36,7 @@ const UserActions = () => {
             <Button className="connector" type="primary">
               Sell
             </Button>
-          </Link>
+          </Link> */}
         </>
       )}
     </>
@@ -53,16 +53,16 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
       }}
     >
       <Link to={`/`}>
-        <Button className="app-btn">Explore</Button>
+        <Button className="app-btn">Generate</Button>
       </Link>
-      <Link to={`/artworks`}>
+      {/* <Link to={`/artworks`}>
         <Button className="app-btn">
           {connected ? 'My Items' : 'Artworks'}
         </Button>
-      </Link>
-      <Link to={`/artists`}>
+      </Link> */}
+      {/* <Link to={`/artists`}>
         <Button className="app-btn">Creators</Button>
-      </Link>
+      </Link> */}
     </div>
   );
 };
