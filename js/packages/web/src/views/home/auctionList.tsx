@@ -1,5 +1,5 @@
 import { useWallet } from '@solana/wallet-adapter-react';
-import { Col, Layout, Row, Tabs } from 'antd';
+import { Col, Layout, Row, Tabs, Card, Button } from 'antd';
 import BN from 'bn.js';
 import React, { useMemo, useState } from 'react';
 import Masonry from 'react-masonry-css';
@@ -11,8 +11,8 @@ import { useMeta } from '../../contexts';
 import { AuctionView, AuctionViewState, useAuctions } from '../../hooks';
 
 const { TabPane } = Tabs;
-
 const { Content } = Layout;
+const { Meta } = Card;
 
 export enum LiveAuctionViewState {
   All = '0',
@@ -148,12 +148,38 @@ export const AuctionListView = () => {
     </Masonry>
   );
 
+  // const handleshow = (
+  //   setState ((prevState) => {
+  //     return {
+  //     show : !prevState.show
+  //   }})
+  // )
+
+  // const optionButton = () => {
+  //   const [showResults, setShowResults] = React.useState(false)
+  //   const onClick = () => setShowResults(true)
+  //   return (
+  //     <div>
+  //       <Button type="default" shape="round" value="Search" onClick={onClick} >
+  //       </Button>
+  //       { showResults ? <Results /> : null }
+  //     </div>
+  //   )
+  // }
+  
+  // const Results = () => (
+  //   <div id="results" className="search-results">
+  //     Some Results
+  //   </div>
+  // )
+
   return (
     <>
-      <PreSaleBanner auction={heroAuction} />
-      <Layout>
+      {/* <PreSaleBanner auction={heroAuction} /> */}
+      <Layout style={{ maxWidth:'90vw' }}>
         <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <Col style={{ width: '100%', marginTop: 10 }}>
+          {/* Choose eye section */}
+          {/* <Col style={{ width: '100%', marginTop: 10 }}>
             {liveAuctions.length >= 0 && (
               <Row>
                 <Tabs
@@ -161,10 +187,16 @@ export const AuctionListView = () => {
                   onTabClick={key => setActiveKey(key as LiveAuctionViewState)}
                 >
                   <TabPane
-                    tab={<span className="tab-title">Live Auctions</span>}
+                    tab={<span className="tab-title">Generate your Own ChibiChans!</span>}
                     key={LiveAuctionViewState.All}
                   >
                     {liveAuctionsView}
+                    <Button type="default" shape="round" value="Search">lalala</Button>
+                    <Button type="default" shape="round" value="Search">lalala</Button>
+                    <Button type="default" shape="round" value="Search">lalala</Button>
+                    <Button type="default" shape="round" value="Search">lalala</Button>
+                    <Button type="default" shape="round" value="Search">lalala</Button>
+                    <Button type="default" shape="round" value="Search">lalala</Button>
                   </TabPane>
                   {auctionsEnded.length > 0 && (
                     <TabPane
@@ -198,7 +230,240 @@ export const AuctionListView = () => {
                 </Tabs>
               </Row>
             )}
-          </Col>
+          </Col> */}
+          
+          {/* Choose eye section */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={8}>
+              <Button value="1" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/1.jpg" />}
+                  >
+                    <Meta title="Black"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button value="2" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/2.jpg" />}
+                  >
+                    <Meta title="Glasses"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button value="3" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/3.jpg" />}
+                  >
+                    <Meta title="Red & Blue"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Choose hair section */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={8}>
+              <Button value="1" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outhair/1.jpg" />}
+                  >
+                    <Meta title="Pink"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button value="2" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outhair/2.jpg" />}
+                  >
+                    <Meta title="Red Hat"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button value="3" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outhair/3.jpg" />}
+                  >
+                    <Meta title="Brown"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Choose hair section */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={6}>
+              <Button value="1" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outpant/1.jpg" />}
+                  >
+                    <Meta title="Short"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={6}>
+              <Button value="2" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outpant/2.jpg" />}
+                  >
+                    <Meta title="Blue"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={6}>
+              <Button value="3" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outpant/3.jpg" />}
+                  >
+                    <Meta title="Red"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={6}>
+              <Button value="4" style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outpant/4.jpg" />}
+                  >
+                    <Meta title="Green"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Choose pant */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/1.jpg" />}
+                  >
+                    <Meta title="Black"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/2.jpg" />}
+                  >
+                    <Meta title="Glasses"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/3.jpg" />}
+                  >
+                    <Meta title="Red & Blue"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Choose skin section */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/1.jpg" />}
+                  >
+                    <Meta title="Black"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/2.jpg" />}
+                  >
+                    <Meta title="Glasses"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/3.jpg" />}
+                  >
+                    <Meta title="Red & Blue"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Choose tee section */}
+          <Row style={{ width:'100vw', height:'100vh' }} gutter={16}>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/1.jpg" />}
+                  >
+                    <Meta title="Black"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/2.jpg" />}
+                  >
+                    <Meta title="Glasses"/>
+                </Card>
+              </Button>
+            </Col>
+            <Col span={8}>
+              <Button style={{ border:'none' }} onClick={() => alert("Hello from here")}>
+                <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img alt="example" src="/ImageFiles/outeye/3.jpg" />}
+                  >
+                    <Meta title="Red & Blue"/>
+                </Card>
+              </Button>
+            </Col>
+          </Row>
         </Content>
       </Layout>
     </>
