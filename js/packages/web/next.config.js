@@ -43,9 +43,6 @@ module.exports = withPlugins(plugins, {
       },
     ];
   },
-});
-
-module.exports = {
   async redirects() {
     return [
       {
@@ -55,4 +52,4 @@ module.exports = {
       },
     ]
   },
-}
+});
