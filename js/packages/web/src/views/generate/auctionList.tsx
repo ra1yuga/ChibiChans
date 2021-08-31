@@ -39,60 +39,60 @@ export const AuctionListView = () => {
   // const [showStep_tee, setShowStep_tee] = useState(false);
   // const [showStep_completed, setShowStep_completed] = useState(false);
   const [showStep, setShowStep] = useState({
-    eye: true,
-    hair: false,
-    pant: false,
-    skin: false,
+    skin: true,
     tee: false,
+    pant: false,
+    eye: false,
+    hair: false,
     completed: false,
   });
-  const onClick_eye = () => { 
-    setShowStep({
-      eye: false,
-      hair: true,
-      pant: false,
-      skin: false,
-      tee: false,
-      completed: false,
-    })
-  }
-  const onClick_hair = () => { 
-    setShowStep({
-      eye: false,
-      hair: false,
-      pant: true,
-      skin: false,
-      tee: false,
-      completed: false,
-    })
-  }
-  const onClick_pant = () => { 
-    setShowStep({
-      eye: false,
-      hair: false,
-      pant: false,
-      skin: true,
-      tee: false,
-      completed: false,
-    })
-  }
   const onClick_skin = () => { 
     setShowStep({
-      eye: false,
-      hair: false,
-      pant: false,
       skin: false,
       tee: true,
+      pant: false,
+      eye: false,
+      hair: false,
       completed: false,
     })
   }
   const onClick_tee = () => { 
     setShowStep({
-      eye: false,
-      hair: false,
-      pant: false,
       skin: false,
       tee: false,
+      pant: true,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_pant = () => { 
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: true,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_eye = () => { 
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: true,
+      completed: false,
+    })
+  }
+  const onClick_hair = () => { 
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: false,
       completed: true,
     })
   }
@@ -452,11 +452,11 @@ const ButtonComplete = () => <Button>
           
           {/* Choose eye section */}
           <div>
-            {showStep.eye ? <ButtonEye /> : null}
-            {showStep.hair ? <ButtonHair /> : null}
-            {showStep.pant ? <ButtonPant /> : null}
             {showStep.skin ? <ButtonSkin /> : null}
             {showStep.tee ? <ButtonTee /> : null}
+            {showStep.pant ? <ButtonPant /> : null}
+            {showStep.eye ? <ButtonEye /> : null}
+            {showStep.hair ? <ButtonHair /> : null}
             {showStep.completed ? <ButtonComplete /> : null}
           </div>
           
