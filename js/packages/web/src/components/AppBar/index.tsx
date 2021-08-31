@@ -52,9 +52,9 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
         flexDirection: vertical ? 'column' : 'row',
       }}
     >
-      <Link to={`/`}>
+      {/* <Link to={`/`}>
         <Button className="app-btn">Generate</Button>
-      </Link>
+      </Link> */}
       {/* <Link to={`/artworks`}>
         <Button className="app-btn">
           {connected ? 'My Items' : 'Artworks'}

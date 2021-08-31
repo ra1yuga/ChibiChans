@@ -5,7 +5,7 @@ import { useMeta } from '../../contexts';
 import { AuctionListView } from './auctionList';
 import { SetupView } from './setup';
 
-export const HomeView = () => {
+export const GenerateView = () => {
   const { isLoading, store } = useMeta();
   const { isConfigured } = useStore();
 

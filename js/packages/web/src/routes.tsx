@@ -9,7 +9,8 @@ import {
   ArtworksView,
   AuctionCreateView,
   AuctionView,
-  HomeView,
+  GenerateView,
+  LandingView,
 } from './views';
 import { AdminView } from './views/admin';
 import { BillingView } from './views/auction/billing';
@@ -54,7 +55,8 @@ export function Routes() {
               path="/auction/:id/billing"
               component={() => <BillingView />}
             />
-            <Route path="/" component={() => <HomeView />} />
+            <Route path="/generate" component={() => <GenerateView />} />
+            <Route path="/" component={() => <LandingView />} />
           </Switch>
         </Providers>
       </HashRouter>

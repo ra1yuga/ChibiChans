@@ -44,3 +44,15 @@ module.exports = withPlugins(plugins, {
     ];
   },
 });
+
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/landing',
+        permanent: true,
+      },
+    ]
+  },
+}
