@@ -3,6 +3,7 @@ import { Providers } from './providers';
 import {
   AnalyticsView,
   ArtCreateView,
+  PetCreateView,
   ArtistsView,
   ArtistView,
   ArtView,
@@ -31,6 +32,11 @@ export function Routes() {
               exact
               path="/art/create/:step_param?"
               component={() => <ArtCreateView />}
+            />
+            <Route
+              exact
+              path="/pet/create/:step_param?"
+              component={() => <PetCreateView />}
             />
             <Route
               exact

@@ -2,6 +2,7 @@ export { LandingView } from './landing';
 export { GenerateView } from './generate';
 export { ArtView } from './art';
 export { ArtCreateView } from './artCreate';
+export { PetCreateView } from './petcreate';
 export { ArtistView } from './artist';
 export { ArtistsView } from './artists';
 export { AuctionView } from './auction';

@@ -48,7 +48,7 @@ const { Step } = Steps;
 const { Dragger } = Upload;
 const { Text } = Typography;
 
-export const ArtCreateView = () => {
+export const PetCreateView = () => {
   const connection = useConnection();
   const { env } = useConnectionConfig();
   const wallet = useWallet();
@@ -81,7 +81,7 @@ export const ArtCreateView = () => {
   
   const gotoStep = useCallback(
     (_step: number) => {
-      history.push(`/art/create/${_step.toString()}`);
+      history.push(`/pet/create/${_step.toString()}`);
       if (_step === 0) setStepsVisible(true);
     },
     [history],
@@ -303,7 +303,7 @@ const UploadStep = (props: {
 
   const [customURL, setCustomURL] = useState<string>('');
   const [customURLErr, setCustomURLErr] = useState<string>('');
-  const disableContinue = !coverFile || !!customURLErr;
+  const disableContinue = !customURL;
 
   useEffect(() => {
     props.setAttributes({
@@ -315,19 +315,21 @@ const UploadStep = (props: {
     });
   }, []);
 
-  const fil = () => {
-    const i = Math.floor(Math.random() * 10); // random value //0 - 9
-    fetch(`https://bakerstreetphantom.github.io/Hosting/${choice_skin}${choice_tee}${choice_pant}${choice_eye}${choice_hair}.jpg`)
-      .then((e) => {
-        return e.blob()
-      })
-      .then((blob) => {
-        let b: any = blob
-        const file = new File([b], `${i}.jpg`, {lastModified: Number((new Date()).toString)});
-        console.log(file); 
-        setCoverFile(file);
-        // setMainFile(file);
-      })
+  const petlink = () => {
+    const i = Math.floor(Math.random() *2+1); // random value //1-2
+    console.log(i)
+    const peturl =`https://bakerstreetphantom.github.io/Hosting/Pet${i}.png`
+    try {
+        // Validate URL and save
+        new URL(peturl);
+        setCustomURL(peturl);
+        setCustomURLErr('');
+      } catch (e) {
+        console.error(e);
+        setCustomURLErr('Please enter a valid absolute URL');
+      }
+      console.log(peturl)
+      console.log(customURL)
     };
 
   const uploadMsg = (category: MetadataCategory) => {
@@ -395,8 +397,8 @@ const UploadStep = (props: {
           </div>
           <p className="ant-upload-text">Drag and drop, or click to browse</p>
         </Dragger> */}
-        <Button onClick={fil}>
-          Generate
+        <Button onClick={petlink}>
+          Pet Generate
         </Button> 
       </Row>
       {props.attributes.properties?.category !== MetadataCategory.Image && (
@@ -496,7 +498,7 @@ const UploadStep = (props: {
                     } as MetadataFile;
                   }),
               },
-              image: coverFile?.name || '',
+              image: coverFile?.name || customURL,
               animation_url: mainFile && mainFile.name,
             });
             props.setFiles([coverFile, mainFile].filter(f => f) as File[]);

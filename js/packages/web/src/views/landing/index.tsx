@@ -8,7 +8,10 @@ export const LandingView = () => {
     <Layout style={{ margin: 0, marginTop: 30, alignItems: 'center' }}>
       <PreSaleBanner/>
       <Link to={`/generate`}>
-        <Button className="app-btn">Generate</Button>
+        <Button className="app-btn">Mint a Customized Chibi</Button>
+      </Link>
+      <Link to={`/pet/create/`}>
+        <Button className="app-btn">Get a Pet for your Chibi</Button>
       </Link>
     </Layout>
   );
