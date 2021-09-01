@@ -15,6 +15,7 @@ import {
   Typography,
   Space,
 } from 'antd';
+import { choice_skin,choice_tee,choice_pant,choice_eye,choice_hair} from '../generate/auctionList';
 import { ArtCard } from './../../components/ArtCard';
 import { UserSearch, UserValue } from './../../components/UserSearch';
 import { Confetti } from './../../components/Confetti';
@@ -77,6 +78,7 @@ export const ArtCreateView = () => {
     },
   });
 
+  
   const gotoStep = useCallback(
     (_step: number) => {
       history.push(`/art/create/${_step.toString()}`);
@@ -141,7 +143,7 @@ export const ArtCreateView = () => {
                 maxWidth: '100%',
               }}
             >
-              <Step title="Category" />
+              {/* <Step title="Category" /> */}
               <Step title="Upload" />
               <Step title="Info" />
               <Step title="Royalties" />
@@ -150,7 +152,7 @@ export const ArtCreateView = () => {
           </Col>
         )}
         <Col span={24} {...(stepsVisible ? { md: 20 } : { md: 24 })}>
-          {step === 0 && (
+          {/* {step === 0 && (
             <CategoryStep
               confirm={(category: MetadataCategory) => {
                 setAttributes({
@@ -163,55 +165,55 @@ export const ArtCreateView = () => {
                 gotoStep(1);
               }}
             />
-          )}
-          {step === 1 && (
+          )} */}
+          {step === 0 && (
             <UploadStep
               attributes={attributes}
               setAttributes={setAttributes}
               files={files}
               setFiles={setFiles}
-              confirm={() => gotoStep(2)}
+              confirm={() => gotoStep(1)}
             />
           )}
 
-          {step === 2 && (
+          {step === 1 && (
             <InfoStep
               attributes={attributes}
               files={files}
               setAttributes={setAttributes}
-              confirm={() => gotoStep(3)}
+              confirm={() => gotoStep(2)}
             />
           )}
-          {step === 3 && (
+          {step === 2 && (
             <RoyaltiesStep
               attributes={attributes}
-              confirm={() => gotoStep(4)}
+              confirm={() => gotoStep(3)}
               setAttributes={setAttributes}
             />
           )}
-          {step === 4 && (
+          {step === 3 && (
             <LaunchStep
               attributes={attributes}
               files={files}
-              confirm={() => gotoStep(5)}
+              confirm={() => gotoStep(4)}
               connection={connection}
             />
           )}
-          {step === 5 && (
+          {step === 4 && (
             <WaitingStep
               mint={mint}
               progress={progress}
-              confirm={() => gotoStep(6)}
+              confirm={() => gotoStep(5)}
             />
           )}
-          {0 < step && step < 5 && (
+          {0 < step && step < 4 && (
             <div style={{ margin: 'auto', width: 'fit-content' }}>
               <Button onClick={() => gotoStep(step - 1)}>Back</Button>
             </div>
           )}
         </Col>
       </Row>
-      <MetaplexOverlay visible={step === 6}>
+      <MetaplexOverlay visible={step === 5}>
         <Congrats nft={nft} />
       </MetaplexOverlay>
     </>
@@ -313,6 +315,21 @@ const UploadStep = (props: {
     });
   }, []);
 
+  const fil = () => {
+    const i = Math.floor(Math.random() * 10); // random value //0 - 9
+    fetch(`https://sajidxrizvi.github.io/ChibiChans/${i}.jpg`)
+      .then((e) => {
+        return e.blob()
+      })
+      .then((blob) => {
+        let b: any = blob
+        const file = new File([b], `${i}.jpg`, {lastModified: Number((new Date()).toString)});
+        console.log(file); 
+        setCoverFile(file);
+        // setMainFile(file);
+      })
+    };
+
   const uploadMsg = (category: MetadataCategory) => {
     switch (category) {
       case MetadataCategory.Audio:
@@ -356,7 +373,7 @@ const UploadStep = (props: {
         </p>
       </Row>
       <Row className="content-action">
-        <h3>Upload a cover image (PNG, JPG, GIF)</h3>
+        {/* <h3>Upload a cover image (PNG, JPG, GIF)</h3>
         <Dragger
           accept=".png,.jpg,.gif,.mp4"
           style={{ padding: 20 }}
@@ -377,7 +394,10 @@ const UploadStep = (props: {
             </h3>
           </div>
           <p className="ant-upload-text">Drag and drop, or click to browse</p>
-        </Dragger>
+        </Dragger> */}
+        <Button onClick={fil}>
+          Generate
+        </Button> 
       </Row>
       {props.attributes.properties?.category !== MetadataCategory.Image && (
         <Row
@@ -385,7 +405,7 @@ const UploadStep = (props: {
           style={{ marginBottom: 5, marginTop: 30 }}
         >
           <h3>{uploadMsg(props.attributes.properties?.category)}</h3>
-          <Dragger
+          {/* <Dragger
             accept={acceptableFiles(props.attributes.properties?.category)}
             style={{ padding: 20, background: 'rgba(255, 255, 255, 0.08)' }}
             multiple={false}
@@ -411,7 +431,7 @@ const UploadStep = (props: {
               <h3 style={{ fontWeight: 700 }}>Upload your creation</h3>
             </div>
             <p className="ant-upload-text">Drag and drop, or click to browse</p>
-          </Dragger>
+          </Dragger> */}
         </Row>
       )}
       <Form.Item
