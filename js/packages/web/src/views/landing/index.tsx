@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom';
 export const LandingView = () => {
   return (
     <Layout style={{ margin: 0, marginTop: 30, alignItems: 'center' }}>
-      <PreSaleBanner/>
+      <h1 style={{ fontSize: '72px', textAlign: 'center' }}>
+        Make your personal ChibiChans
+      </h1>
+      <img style={{ marginBottom: 50 }} src="/ImageFiles/bg.jpg" alt="BG Chibichans" width="500" height="600"></img>
       <Link to={`/generate`}>
-        <Button className="app-btn">Generate</Button>
+        <Button type="primary" className="app-btn">Generate mine!</Button>
       </Link>
     </Layout>
   );
