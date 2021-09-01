@@ -474,8 +474,8 @@ export const AuctionListView = () => {
   </div>;
 
 const ButtonComplete = () => <Link to={`/art/create`}>
-<Button className="app-btn">Create</Button>
-</Link>
+    <Button type="primary" style={{alignItems: 'center'}} className="app-btn">Generate ChibiChans</Button>
+  </Link>
 
   // Check if the auction is primary sale or not
   const checkPrimarySale = (auc: AuctionView) => {
@@ -594,7 +594,6 @@ const ButtonComplete = () => <Link to={`/art/create`}>
 
   return (
     <>
-      {/* <PreSaleBanner auction={heroAuction} /> */}
       <Layout style={{ maxWidth:'90vw' }}>
         <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
           
