@@ -9,7 +9,7 @@ import { CardLoader } from '../../components/MyLoader';
 import { PreSaleBanner } from '../../components/PreSaleBanner';
 import { useMeta } from '../../contexts';
 import { AuctionView, AuctionViewState, useAuctions } from '../../hooks';
-
+export var choice_skin,choice_tee,choice_pant,choice_eye,choice_hair;
 const { TabPane } = Tabs;
 const { Content } = Layout;
 const { Meta } = Card;
@@ -46,7 +46,8 @@ export const AuctionListView = () => {
     hair: false,
     completed: false,
   });
-  const onClick_skin = () => { 
+  const onClick_skin1 = () => { 
+    choice_skin=1
     setShowStep({
       skin: false,
       tee: true,
@@ -56,7 +57,52 @@ export const AuctionListView = () => {
       completed: false,
     })
   }
-  const onClick_tee = () => { 
+  const onClick_skin2 = () => {
+    choice_skin=2 
+    setShowStep({
+      skin: false,
+      tee: true,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_skin3 = () => {
+    choice_skin=3 
+    setShowStep({
+      skin: false,
+      tee: true,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_skin4 = () => { 
+    choice_skin=4
+    setShowStep({
+      skin: false,
+      tee: true,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_skin5 = () => { 
+    choice_skin=5
+    setShowStep({
+      skin: false,
+      tee: true,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_tee1 = () => { 
+    choice_tee=1
     setShowStep({
       skin: false,
       tee: false,
@@ -66,7 +112,30 @@ export const AuctionListView = () => {
       completed: false,
     })
   }
-  const onClick_pant = () => { 
+  const onClick_tee2 = () => { 
+    choice_tee=2
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: true,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_tee3 = () => { 
+    choice_tee=3
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: true,
+      eye: false,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_pant1 = () => { 
+    choice_pant=1
     setShowStep({
       skin: false,
       tee: false,
@@ -76,7 +145,41 @@ export const AuctionListView = () => {
       completed: false,
     })
   }
-  const onClick_eye = () => { 
+  const onClick_pant2 = () => { 
+    choice_pant=2
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: true,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_pant3 = () => { 
+    choice_pant=3
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: true,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_pant4 = () => { 
+    choice_pant=4
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: true,
+      hair: false,
+      completed: false,
+    })
+  }
+  const onClick_eye1 = () => { 
+    choice_eye=1
     setShowStep({
       skin: false,
       tee: false,
@@ -86,7 +189,52 @@ export const AuctionListView = () => {
       completed: false,
     })
   }
-  const onClick_hair = () => { 
+  const onClick_eye2 = () => { 
+    choice_eye=2
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: true,
+      completed: false,
+    })
+  }
+  const onClick_eye3 = () => { 
+    choice_eye=3
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: true,
+      completed: false,
+    })
+  }
+  const onClick_hair1 = () => { 
+    choice_hair=1
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: true,
+    })
+  }
+  const onClick_hair2 = () => { 
+    choice_hair=2
+    setShowStep({
+      skin: false,
+      tee: false,
+      pant: false,
+      eye: false,
+      hair: false,
+      completed: true,
+    })
+  }
+  const onClick_hair3 = () => { 
+    choice_hair=3
     setShowStep({
       skin: false,
       tee: false,
@@ -103,7 +251,7 @@ export const AuctionListView = () => {
 
   const ButtonEye = () => <div><Row className="fixed" style={{ width:'100vw', height:'100vh' }} gutter={16}>
     <Col span={8}>
-      <Button value="1" style={{ border:'none' }} onClick={onClick_eye}>
+      <Button value="1" style={{ border:'none' }} onClick={onClick_eye1}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -114,7 +262,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="2" style={{ border:'none' }} onClick={onClick_eye}>
+      <Button value="2" style={{ border:'none' }} onClick={onClick_eye2}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -125,7 +273,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="3" style={{ border:'none' }} onClick={onClick_eye}>
+      <Button value="3" style={{ border:'none' }} onClick={onClick_eye3}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -141,7 +289,7 @@ export const AuctionListView = () => {
   {/* Choose hair section */}
   const ButtonHair = () => <div><Row className="fixed" style={{ width:'100vw', height:'100vh' }} gutter={16}>
     <Col span={8}>
-      <Button value="1" style={{ border:'none' }} onClick={onClick_hair}>
+      <Button value="1" style={{ border:'none' }} onClick={onClick_hair1}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -152,7 +300,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="2" style={{ border:'none' }} onClick={onClick_hair}>
+      <Button value="2" style={{ border:'none' }} onClick={onClick_hair2}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -163,7 +311,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="3" style={{ border:'none' }} onClick={onClick_hair}>
+      <Button value="3" style={{ border:'none' }} onClick={onClick_hair3}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -181,7 +329,7 @@ export const AuctionListView = () => {
   {/* Choose Pant section */}
   const ButtonPant = () => <div><Row className="fixed" style={{ width:'100vw', height:'100vh' }} gutter={16}>
     <Col span={5}>
-      <Button value="1" style={{ border:'none' }} onClick={onClick_pant}>
+      <Button value="1" style={{ border:'none' }} onClick={onClick_pant1}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -192,7 +340,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="2" style={{ border:'none' }} onClick={onClick_pant}>
+      <Button value="2" style={{ border:'none' }} onClick={onClick_pant2}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -203,7 +351,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="3" style={{ border:'none' }} onClick={onClick_pant}>
+      <Button value="3" style={{ border:'none' }} onClick={onClick_pant3}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -214,7 +362,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="4" style={{ border:'none' }} onClick={onClick_pant}>
+      <Button value="4" style={{ border:'none' }} onClick={onClick_pant4}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -230,7 +378,7 @@ export const AuctionListView = () => {
   {/* Choose skin section */}
   const ButtonSkin = () => <div><Row className="fixed" style={{ width:'100vw', height:'100vh' }} gutter={16}>
     <Col span={5}>
-      <Button value="1" style={{ border:'none' }} onClick={onClick_skin}>
+      <Button value="1" style={{ border:'none' }} onClick={onClick_skin1}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -241,7 +389,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="2" style={{ border:'none' }} onClick={onClick_skin}>
+      <Button value="2" style={{ border:'none' }} onClick={onClick_skin2}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -252,7 +400,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="3" style={{ border:'none' }} onClick={onClick_skin}>
+      <Button value="3" style={{ border:'none' }} onClick={onClick_skin3}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -263,7 +411,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="4" style={{ border:'none' }} onClick={onClick_skin}>
+      <Button value="4" style={{ border:'none' }} onClick={onClick_skin4}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -274,7 +422,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={5}>
-      <Button value="5" style={{ border:'none' }} onClick={onClick_skin}>
+      <Button value="5" style={{ border:'none' }} onClick={onClick_skin5}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -290,7 +438,7 @@ export const AuctionListView = () => {
   {/* Choose tee section */}
   const ButtonTee = () => <div><Row className="fixed" style={{ width:'100vw', height:'100vh' }} gutter={16}>
     <Col span={8}>
-      <Button value="1" style={{ border:'none' }} onClick={onClick_tee}>
+      <Button value="1" style={{ border:'none' }} onClick={onClick_tee1}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -301,7 +449,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="2" style={{ border:'none' }} onClick={onClick_tee}>
+      <Button value="2" style={{ border:'none' }} onClick={onClick_tee2}>
         <Card
             hoverable
             style={{ width: 180 }}
@@ -312,7 +460,7 @@ export const AuctionListView = () => {
       </Button>
     </Col>
     <Col span={8}>
-      <Button value="3" style={{ border:'none' }} onClick={onClick_tee}>
+      <Button value="3" style={{ border:'none' }} onClick={onClick_tee3}>
         <Card
             hoverable
             style={{ width: 180 }}
