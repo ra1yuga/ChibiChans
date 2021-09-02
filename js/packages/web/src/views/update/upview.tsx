@@ -9,7 +9,7 @@ import { CardLoader } from '../../components/MyLoader';
 import { PreSaleBanner } from '../../components/PreSaleBanner';
 import { useMeta } from '../../contexts';
 import { AuctionView, AuctionViewState, useAuctions } from '../../hooks';
-export var choice_skin,choice_tee,choice_pant,choice_eye,choice_hair;
+export var up_choice_skin,up_choice_tee,up_choice_pant,up_choice_eye,up_choice_hair;
 const { TabPane } = Tabs;
 const { Content } = Layout;
 const { Meta } = Card;
@@ -21,7 +21,7 @@ export enum LiveAuctionViewState {
   Resale = '3',
 }
 
-export const AuctionListView = () => {
+export const UpdateView = () => {
   const auctions = useAuctions(AuctionViewState.Live);
   const auctionsEnded = useAuctions(AuctionViewState.Ended);
   const [activeKey, setActiveKey] = useState(LiveAuctionViewState.All);
@@ -47,7 +47,7 @@ export const AuctionListView = () => {
     completed: false,
   });
   const onClick_skin1 = () => { 
-    choice_skin=1
+    up_choice_skin=1
     setShowStep({
       skin: false,
       tee: true,
@@ -58,7 +58,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_skin2 = () => {
-    choice_skin=2 
+    up_choice_skin=2 
     setShowStep({
       skin: false,
       tee: true,
@@ -69,7 +69,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_skin3 = () => {
-    choice_skin=3 
+    up_choice_skin=3 
     setShowStep({
       skin: false,
       tee: true,
@@ -80,7 +80,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_skin4 = () => { 
-    choice_skin=4
+    up_choice_skin=4
     setShowStep({
       skin: false,
       tee: true,
@@ -91,7 +91,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_skin5 = () => { 
-    choice_skin=5
+    up_choice_skin=5
     setShowStep({
       skin: false,
       tee: true,
@@ -102,7 +102,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_tee1 = () => { 
-    choice_tee=1
+    up_choice_tee=1
     setShowStep({
       skin: false,
       tee: false,
@@ -113,7 +113,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_tee2 = () => { 
-    choice_tee=2
+    up_choice_tee=2
     setShowStep({
       skin: false,
       tee: false,
@@ -124,7 +124,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_tee3 = () => { 
-    choice_tee=3
+    up_choice_tee=3
     setShowStep({
       skin: false,
       tee: false,
@@ -135,7 +135,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_pant1 = () => { 
-    choice_pant=1
+    up_choice_pant=1
     setShowStep({
       skin: false,
       tee: false,
@@ -146,7 +146,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_pant2 = () => { 
-    choice_pant=2
+    up_choice_pant=2
     setShowStep({
       skin: false,
       tee: false,
@@ -157,7 +157,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_pant3 = () => { 
-    choice_pant=3
+    up_choice_pant=3
     setShowStep({
       skin: false,
       tee: false,
@@ -168,7 +168,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_pant4 = () => { 
-    choice_pant=4
+    up_choice_pant=4
     setShowStep({
       skin: false,
       tee: false,
@@ -179,7 +179,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_eye1 = () => { 
-    choice_eye=1
+    up_choice_eye=1
     setShowStep({
       skin: false,
       tee: false,
@@ -190,7 +190,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_eye2 = () => { 
-    choice_eye=2
+    up_choice_eye=2
     setShowStep({
       skin: false,
       tee: false,
@@ -201,7 +201,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_eye3 = () => { 
-    choice_eye=3
+    up_choice_eye=3
     setShowStep({
       skin: false,
       tee: false,
@@ -212,7 +212,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_hair1 = () => { 
-    choice_hair=1
+    up_choice_hair=1
     setShowStep({
       skin: false,
       tee: false,
@@ -223,7 +223,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_hair2 = () => { 
-    choice_hair=2
+    up_choice_hair=2
     setShowStep({
       skin: false,
       tee: false,
@@ -234,7 +234,7 @@ export const AuctionListView = () => {
     })
   }
   const onClick_hair3 = () => { 
-    choice_hair=3
+    up_choice_hair=3
     setShowStep({
       skin: false,
       tee: false,
@@ -475,8 +475,8 @@ export const AuctionListView = () => {
 
   const ButtonComplete = () => 
   <Layout style={{ margin: 200, marginTop: 300, alignItems: 'center' }}>
-  <Link to={`/art/create`}>
-    <Button type="primary" className="app-btn">Generate Your ChibiChan</Button>
+  <Link to={`/upup/create`}>
+    <Button type="primary" className="app-btn">Update Your ChibiChan</Button>
   </Link>
   </Layout>
   // Check if the auction is primary sale or not

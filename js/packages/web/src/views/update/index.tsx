@@ -16,11 +16,11 @@ import {
   Space,
   Layout
 } from 'antd';
-import { choice_skin,choice_tee,choice_pant,choice_eye,choice_hair} from '../generate/auctionList';
+import { up_choice_skin,up_choice_tee,up_choice_pant,up_choice_eye,up_choice_hair } from './upview';
 import { ArtCard } from './../../components/ArtCard';
 import { UserSearch, UserValue } from './../../components/UserSearch';
 import { Confetti } from './../../components/Confetti';
-import { mintNFT } from '../../actions';
+import { uppy } from '../../actions/update';
 import {
   MAX_METADATA_LEN,
   useConnection,
@@ -50,7 +50,7 @@ const { Step } = Steps;
 const { Dragger } = Upload;
 const { Text } = Typography;
 
-export const ArtCreateView = () => {
+export const UpCreateView = () => {
   const connection = useConnection();
   const { env } = useConnectionConfig();
   const wallet = useWallet();
@@ -64,6 +64,7 @@ export const ArtCreateView = () => {
   const [nft, setNft] =
     useState<{ metadataAccount: StringPublicKey } | undefined>(undefined);
   const [files, setFiles] = useState<File[]>([]);
+  const [mintKey, setMintKey] = useState<string>('');
   const [attributes, setAttributes] = useState<IMetadataExtension>({
     name: '',
     symbol: '',
@@ -83,7 +84,7 @@ export const ArtCreateView = () => {
   
   const gotoStep = useCallback(
     (_step: number) => {
-      history.push(`/art/create/${_step.toString()}`);
+      history.push(`/upup/create/${_step.toString()}`);
       if (_step === 0) setStepsVisible(true);
     },
     [history],
@@ -95,7 +96,7 @@ export const ArtCreateView = () => {
   }, [step_param, gotoStep]);
 
   // store files
-  const mint = async () => {
+  const update = async () => {
     const metadata = {
       name: attributes.name,
       symbol: attributes.symbol,
@@ -117,11 +118,12 @@ export const ArtCreateView = () => {
       600,
     );
     // Update progress inside mintNFT
-    const _nft = await mintNFT(
+    const _nft = await uppy(
       connection,
       wallet,
       env,
       files,
+      mintKey,
       metadata,
       attributes.properties?.maxSupply,
     );
@@ -174,6 +176,8 @@ export const ArtCreateView = () => {
               setAttributes={setAttributes}
               files={files}
               setFiles={setFiles}
+              mintKey={mintKey}
+              setMintKey={setMintKey}
               confirm={() => gotoStep(1)}
             />
           )}
@@ -203,7 +207,7 @@ export const ArtCreateView = () => {
           )}
           {step === 4 && (
             <WaitingStep
-              mint={mint}
+              mint={update}
               progress={progress}
               confirm={() => gotoStep(5)}
             />
@@ -296,6 +300,8 @@ const UploadStep = (props: {
   setAttributes: (attr: IMetadataExtension) => void;
   files: File[];
   setFiles: (files: File[]) => void;
+  mintKey: string
+  setMintKey: (mintKey: string) => void;
   confirm: () => void;
 }) => {
   const [coverFile, setCoverFile] = useState<File | undefined>(
@@ -318,7 +324,7 @@ const UploadStep = (props: {
 
   const fil = () => {
     const i = Math.floor(Math.random() * 10); // random value //0 - 9
-    fetch(`https://bakerstreetphantom.github.io/Hosting/${choice_skin}${choice_tee}${choice_pant}${choice_eye}${choice_hair}.jpg`)
+    fetch(`https://bakerstreetphantom.github.io/Hosting/${up_choice_skin}${up_choice_tee}${up_choice_pant}${up_choice_eye}${up_choice_hair}.jpg`)
       .then((e) => {
         return e.blob()
       })
@@ -435,43 +441,42 @@ const UploadStep = (props: {
           </Dragger> */}
         </Row>
       )}
-      {/* <Form.Item
+      <Form.Item
         style={{
           width: '100%',
           flexDirection: 'column',
           paddingTop: 30,
           marginBottom: 4,
         }}
-        label={<h3>OR use absolute URL to content</h3>}
+        label={<h3>Enter your NFT MintKey</h3>}
         labelAlign="left"
         colon={false}
-        validateStatus={customURLErr ? 'error' : 'success'}
-        help={customURLErr}
       >
         <Input
-          disabled={!!mainFile}
-          placeholder="http://example.com/path/to/image"
-          value={customURL}
-          onChange={ev => setCustomURL(ev.target.value)}
-          onFocus={() => setCustomURLErr('')}
+          disabled={false}
+          placeholder="You can find the mint key on explorer"
+          value={props.mintKey}
+          onChange={ev => props.setMintKey(ev.target.value)}
+          onFocus={() => props.setMintKey('')}
           onBlur={() => {
-            if (!customURL) {
+            if (!props.mintKey) {
               setCustomURLErr('');
               return;
             }
 
             try {
               // Validate URL and save
-              new URL(customURL);
-              setCustomURL(customURL);
+              new String(props.mintKey);
+              props.setMintKey(props.mintKey);
               setCustomURLErr('');
+              console.log(props.mintKey)
             } catch (e) {
               console.error(e);
-              setCustomURLErr('Please enter a valid absolute URL');
+              setCustomURLErr('Please enter a valid Mint Key');
             }
           }}
         />
-      </Form.Item> */}
+      </Form.Item>
       <Row>
         <Button
           type="primary"

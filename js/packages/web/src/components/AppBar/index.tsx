@@ -52,17 +52,17 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
         flexDirection: vertical ? 'column' : 'row',
       }}
     >
-      {/* <Link to={`/`}>
-        <Button className="app-btn">Generate</Button>
-      </Link> */}
-      {/* <Link to={`/artworks`}>
+      <Link to={`/generate`}>
+        <Button className="app-btn">Mint ChibiChans</Button>
+      </Link>
+      <Link to={`/pet/create`}>
         <Button className="app-btn">
-          {connected ? 'My Items' : 'Artworks'}
+          Mint PettoChans
         </Button>
-      </Link> */}
-      {/* <Link to={`/artists`}>
-        <Button className="app-btn">Creators</Button>
-      </Link> */}
+      </Link>
+      <Link to={`/update`}>
+        <Button className="app-btn">Update ChibiChans</Button>
+      </Link>
     </div>
   );
 };

@@ -13,6 +13,8 @@ import {
   GenerateView,
   LandingView,
 } from './views';
+import { UpCreateView } from './views/update';
+import { UpView } from './views/generate';
 import { AdminView } from './views/admin';
 import { BillingView } from './views/auction/billing';
 
@@ -32,6 +34,11 @@ export function Routes() {
               exact
               path="/art/create/:step_param?"
               component={() => <ArtCreateView />}
+            />
+             <Route
+              exact
+              path="/upup/create/:step_param?"
+              component={() => <UpCreateView />}
             />
             <Route
               exact
@@ -62,6 +69,7 @@ export function Routes() {
               component={() => <BillingView />}
             />
             <Route path="/generate" component={() => <GenerateView />} />
+            <Route path="/update" component={() => <UpView />} />
             <Route path="/" component={() => <LandingView />} />
           </Switch>
         </Providers>
