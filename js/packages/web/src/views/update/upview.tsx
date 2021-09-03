@@ -255,7 +255,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outeye/1.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outeye/1.jpg" />}
           >
             <Meta title="VR Headset"/>
         </Card>
@@ -266,7 +266,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outeye/2.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outeye/2.jpg" />}
           >
             <Meta title="Glasses"/>
         </Card>
@@ -277,7 +277,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outeye/3.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outeye/3.jpg" />}
           >
             <Meta title="Duality"/>
         </Card>
@@ -293,7 +293,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outhair/1.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outhair/1.jpg" />}
           >
             <Meta title="Pink Pony"/>
         </Card>
@@ -304,7 +304,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outhair/2.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outhair/2.jpg" />}
           >
             <Meta title="Pirate"/>
         </Card>
@@ -315,7 +315,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outhair/3.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outhair/3.jpg" />}
           >
             <Meta title="Hazel Hair"/>
         </Card>
@@ -333,7 +333,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 250 }}
-            cover={<img alt="example" src="/ImageFiles/outpant/1.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outpant/1.jpg" />}
           >
             <Meta title="Undy or Nothing"/>
         </Card>
@@ -344,7 +344,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 250 }}
-            cover={<img alt="example" src="/ImageFiles/outpant/2.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outpant/2.jpg" />}
           >
             <Meta title="Denim J"/>
         </Card>
@@ -355,7 +355,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 250 }}
-            cover={<img alt="example" src="/ImageFiles/outpant/3.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outpant/3.jpg" />}
           >
             <Meta title="Karate Pant"/>
         </Card>
@@ -366,7 +366,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 250 }}
-            cover={<img alt="example" src="/ImageFiles/outpant/4.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outpant/4.jpg" />}
           >
             <Meta title="Hawaii Baby"/>
         </Card>
@@ -382,7 +382,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/1.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outskin/1.jpg" />}
           >
             <Meta title="Zombie"/>
         </Card>
@@ -393,7 +393,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/2.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outskin/2.jpg" />}
           >
             <Meta title="Lovely Light"/>
         </Card>
@@ -404,7 +404,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/3.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outskin/3.jpg" />}
           >
             <Meta title="Dashing Dark"/>
         </Card>
@@ -415,7 +415,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/4.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outskin/4.jpg" />}
           >
             <Meta title="Diamond"/>
         </Card>
@@ -426,7 +426,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/5.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outskin/5.jpg" />}
           >
             <Meta title="Redurple"/>
         </Card>
@@ -442,7 +442,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outtee/1.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outtee/1.jpg" />}
           >
             <Meta title="Goku"/>
         </Card>
@@ -453,7 +453,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outtee/2.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outtee/2.jpg" />}
           >
             <Meta title="School Uniform"/>
         </Card>
@@ -464,7 +464,7 @@ export const UpdateView = () => {
         <Card
             hoverable
             style={{ width: 300 }}
-            cover={<img alt="example" src="/ImageFiles/outtee/3.jpg" />}
+            cover={<img alt="example" src="ChibiChans/ImageFiles/outtee/3.jpg" />}
           >
             <Meta title="Tanjiro"/>
         </Card>
