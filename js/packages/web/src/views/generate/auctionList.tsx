@@ -404,7 +404,7 @@ export const AuctionListView = () => {
         <Card
             hoverable
             style={{ width: 200 }}
-            cover={<img alt="example" src="/ImageFiles/outskin/3.jpg" />}
+            cover={<img alt="example" src="js/packages/web/public/ImageFiles/outskin/3.jpg" />}
           >
             <Meta title="Dashing Dark"/>
         </Card>
