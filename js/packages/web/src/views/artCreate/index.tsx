@@ -1171,7 +1171,7 @@ const Congrats = (props: {
     <>
       <div className="waiting-title">Congratulations, you created an NFT!</div>
       <div className="congrats-button-container">
-        <Button
+<!--         <Button
           className="metaplex-button"
           onClick={_ => window.open(newTweetURL(), '_blank')}
         >
@@ -1186,14 +1186,16 @@ const Congrats = (props: {
         >
           <span>See it in your collection</span>
           <span>&gt;</span>
-        </Button>
+        </Button> -->
+        <Link to="/">
         <Button
           className="metaplex-button"
           onClick={_ => history.push('/auction/create')}
         >
-          <span>Sell it via auction</span>
+          <span>Return to homepage</span>
           <span>&gt;</span>
         </Button>
+        </Link>
       </div>
       <Confetti />
     </>
