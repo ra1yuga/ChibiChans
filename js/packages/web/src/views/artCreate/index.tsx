@@ -1190,7 +1190,6 @@ const Congrats = (props: {
         <Link to="/">
         <Button
           className="metaplex-button"
-          onClick={_ => history.push('/auction/create')}
         >
           <span>Return to homepage</span>
           <span>&gt;</span>
