@@ -38,7 +38,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { getAssetCostToStore, LAMPORT_MULTIPLIER } from '../../utils/assets';
 import { Connection } from '@solana/web3.js';
 import { MintLayout } from '@solana/spl-token';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { cleanName, getLast } from '../../utils/utils';
 import { AmountLabel } from '../../components/AmountLabel';
 import useWindowDimensions from '../../utils/layout';
@@ -1172,7 +1172,7 @@ const Congrats = (props: {
     <>
       <div className="waiting-title">Congratulations, you created an NFT!</div>
       <div className="congrats-button-container">
-<!--         <Button
+       {/* <Button
           className="metaplex-button"
           onClick={_ => window.open(newTweetURL(), '_blank')}
         >
@@ -1187,7 +1187,7 @@ const Congrats = (props: {
         >
           <span>See it in your collection</span>
           <span>&gt;</span>
-        </Button> -->
+        </Button>  */}
         <Link to="/">
         <Button
           className="metaplex-button"
